@@ -15,13 +15,13 @@ repo = g.get_repo(repo_name)
 pull = repo.get_pull(int(pull_number))
 comments = pull.get_issue_comments()
 
-#find a comment
+#Update the comment or create a new one
 for comment in comments:
-    print(comment)
-    print(comment.user)
-    print(comment.user.login)
-    if comment.user.login == ME:
-        print(comment.body)
+    if comment.user.login == ME and comment.body.startswith(MAGIC):
+        comment.edit(comment.body + "\ncomment again!")
+        break
+else:
+    pull.create_issue_comment(MAGIC + " first comment")
 
 
 
