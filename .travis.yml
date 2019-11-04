@@ -1,0 +1,3 @@
+langauge: python
+install: pip install PyGithub
+script: python Reporter.py
