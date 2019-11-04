@@ -14,6 +14,8 @@ repo_name = os.environ["TRAVIS_REPO_SLUG"]
 repo = g.get_repo(repo_name)
 pull = repo.get_pull(int(pull_number))
 comments = pull.get_issue_comments()
+
+#find a comment
 for comment in comments:
     print(comment)
     print(comment.user)
