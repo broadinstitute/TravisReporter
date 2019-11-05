@@ -1,6 +1,6 @@
 from github import Github
 import os
-import re
+import sys
 
 key = os.environ["GITHUB_TOKEN"]
 g = Github(key)
@@ -43,7 +43,7 @@ report_path = os.environ["REPORT_PATH"]
 logs_storage = os.environ["HELLBENDER_TEST_LOGS"]
 log_url = "https://storage.googleapis.com" + logs_storage + report_path + "tests/test/index.html"
 
-message = "[%s](%s) - [Logs](%s)" % (job_number, job_page_url, log_url)
+message = "[%s](%s) - [Logs](%s)" % (job_number, job_page_url, sys.argv[1])
 
 
 def update(comment):

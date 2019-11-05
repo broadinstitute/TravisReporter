@@ -1,3 +1,4 @@
 language: python
 install: pip install PyGithub
-script: python Reporter.py
+script: python Reporter.py www.google.com
+
