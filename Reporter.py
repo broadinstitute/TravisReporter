@@ -31,9 +31,8 @@ def matches_build_id(comment, build_id):
 def is_my_comment(comment):
     return comment.user.login == ME
 
-
-travis_page_url = "https://travis-ci.com/" + repo_name + "/builds/" + build_id
-job_page_url = "https://travis-ci.com/" + repo_name + "/jobs/" + job_id
+travis_page_url = os.getenv("TRAVIS_BUILD_WEB_URL")
+job_page_url = os.getenv("TRAVIS_JOB_WEB_URL")
 
 log_url = sys.argv[1]
 message = "| %s | %s | [%s](%s) | [logs](%s) |" % (test_type, jdk_version, job_number, job_page_url, log_url)
