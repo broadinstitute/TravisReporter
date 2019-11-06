@@ -2,6 +2,6 @@ language: java
 jdk:
   - oraclejdk9
   - openjdk8
-install: pip install PyGithub
+install: pip install --user PyGithub
 script: python Reporter.py www.google.com
 
