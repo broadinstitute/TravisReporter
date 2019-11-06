@@ -3,5 +3,5 @@ jdk:
   - oraclejdk9
   - openjdk8
 install: pip install --user PyGithub
-script: python Reporter.py www.google.com
+script: python Reporter.py http://www.google.com
 
